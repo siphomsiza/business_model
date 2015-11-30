@@ -51,9 +51,10 @@ gem 'font-awesome-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'sprockets', '2.11.0'
 
+gem 'faker'
+
 group :development, :test do
   gem 'mailcatcher'
-  gem 'faker'
   gem "factory_girl_rails"
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0.0.beta1'
