@@ -21,6 +21,10 @@ module BusinessModel
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
+    I18n.enforce_available_locales = false
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| "<div class='form-group has-error'>#{html_tag}</div>".html_safe }
+    config.generators do |g|
+      g.test_framework :rspec
+    end
   end
 end

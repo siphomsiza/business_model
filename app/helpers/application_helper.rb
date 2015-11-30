@@ -15,7 +15,7 @@ module ApplicationHelper
     tag(:input, html_options.merge(:type => 'button', :value => name, :onclick => onclick))
   end
 
-  def link(text, path,fa_icon=fa_icon, styleclass='')
+  def link(text, path,fa_icon=fa_icon, styleclass='', html_options={})
     link_to fa_icon(fa_icon, :text => text) , path, :class => "btn btn-default #{styleclass}"
   end
 

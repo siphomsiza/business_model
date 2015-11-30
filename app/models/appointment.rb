@@ -8,6 +8,8 @@ class Appointment < ActiveRecord::Base
   foreign_key: "employee_id"
 
   validates :company_id,:employee_id, :description, :start_time,:end_time,:info, :presence => true
+  validate :start_must_be_before_end_time
+
   validate :overlapping_appointments
 
   # Check if a given interval overlaps this interval
@@ -28,5 +30,10 @@ class Appointment < ActiveRecord::Base
     if conflicting?
       errors[:base] << "This appointment overlaps with another one."
     end
+  end
+
+  def start_must_be_before_end_time
+    errors.add(:start_time, "must be before end time") unless
+        start_time < end_time
   end
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :employees, class_name: "Employee",:path => "auth"
+  devise_for :employees,:path => "auth"
 
   authenticated :employee do
     root 'welcome#index', as: :authenticated_root

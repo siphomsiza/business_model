@@ -39,7 +39,7 @@ class AppointmentsController < ApplicationController
     respond_to do |format|
       if @appointment.save
         format.html { redirect_to company_appointment_path(@company,@appointment), notice: 'Appointment was successfully created.' }
-        format.json { render :show, status: :created, location: @appointment }
+        format.json { render :show, status: :created, location: [@company,@appointment] }
       else
         format.html { render :new }
         format.json { render json: @appointment.errors, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class AppointmentsController < ApplicationController
     respond_to do |format|
       if @appointment.update(appointment_params)
         format.html { redirect_to company_appointment_path(@company,@appointment), notice: 'Appointment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @appointment }
+        format.json { render :show, status: :ok, location: [@company,@appointment]}
       else
         format.html { render :edit }
         format.json { render json: @appointment.errors, status: :unprocessable_entity }

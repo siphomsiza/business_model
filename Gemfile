@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
+
 # Use postgress as the database for Active Record
 gem 'pg'
 
@@ -65,4 +66,5 @@ end
 group :test do
   gem 'rspec'
   gem 'database_cleaner'
+  gem 'test-unit'
 end

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20151129205947) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "appointments", force: :cascade do |t|
+  create_table "appointments", force: true do |t|
     t.integer  "company_id"
     t.integer  "employee_id"
     t.string   "description"
@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(version: 20151129205947) do
   add_index "appointments", ["company_id"], name: "index_appointments_on_company_id", using: :btree
   add_index "appointments", ["employee_id"], name: "index_appointments_on_employee_id", using: :btree
 
-  create_table "companies", force: :cascade do |t|
+  create_table "companies", force: true do |t|
     t.string   "company_name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
-  create_table "contact_infos", force: :cascade do |t|
+  create_table "contact_infos", force: true do |t|
     t.integer  "employee_id"
     t.string   "email"
     t.string   "mobile_number"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20151129205947) do
 
   add_index "contact_infos", ["employee_id"], name: "index_contact_infos_on_employee_id", using: :btree
 
-  create_table "employees", force: :cascade do |t|
+  create_table "employees", force: true do |t|
     t.string   "first_name"
     t.string   "surname"
     t.string   "username",               default: "", null: false
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20151129205947) do
   add_index "employees", ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true, using: :btree
   add_index "employees", ["username"], name: "index_employees_on_username", unique: true, using: :btree
 
-  create_table "employees_roles", id: false, force: :cascade do |t|
+  create_table "employees_roles", id: false, force: true do |t|
     t.integer  "role_id"
     t.integer  "employee_id"
     t.datetime "created_at"
@@ -80,20 +80,10 @@ ActiveRecord::Schema.define(version: 20151129205947) do
   add_index "employees_roles", ["employee_id"], name: "index_employees_roles_on_employee_id", using: :btree
   add_index "employees_roles", ["role_id"], name: "index_employees_roles_on_role_id", using: :btree
 
-  create_table "roles", force: :cascade do |t|
+  create_table "roles", force: true do |t|
     t.string   "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "user_roles", id: false, force: :cascade do |t|
-    t.integer  "role_id"
-    t.integer  "employee_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "user_roles", ["employee_id"], name: "index_user_roles_on_employee_id", using: :btree
-  add_index "user_roles", ["role_id"], name: "index_user_roles_on_role_id", using: :btree
 
 end
