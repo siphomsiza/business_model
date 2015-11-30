@@ -2,6 +2,7 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
+require "faker"
 Company.delete_all
 Employee.delete_all
 Role.delete_all
@@ -56,10 +57,10 @@ user2.roles << user_role
 
 #creates appointments for  Admin1
 counter = 0
-3.times do
-  counter =+ 1
-  start_time = Faker::Time.between(counter.days.ago, Time.now, :morning)
-  end_time =  Faker::Time.between(counter.days.ago, Time.now, :afternoon)
+10.times do
+  counter =+ 2
+  start_time = Faker::Time.forward(23, :morning)#Faker::Time.between(counter.days.ago, Time.now, :morning)
+  end_time =  Faker::Time.backward(14, :evening)
 
   Appointment.create!(employee: admin1 ,company: admin1.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: start_time,end_time: end_time)
   Appointment.create!(employee: user1 ,company: user1.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: start_time,end_time: end_time)
