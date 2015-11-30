@@ -22,10 +22,10 @@
         <% @appointments.each do |appointment| %>
           <tr>
             <td><%= appointment.id %></td>
-            <td width="300px;"><%= appointment.description %></td>
-            <td width="250px;"><%= appointment.employee.fullname %></td>
-            <td width="100px;"><%= date_format appointment.start_time %></td>
-            <td width="100px;"><%= date_format appointment.end_time %></td>
+            <td width="250px;"><%= appointment.description %></td>
+            <td width="200px;"><%= appointment.employee.fullname %></td>
+            <td width="140px;"><%= datetime_format appointment.start_time %></td>
+            <td width="140px;"><%= datetime_format appointment.end_time %></td>
             <td class='actions'>
               <%= show_link('Show appointment', company_appointment_path(appointment.company,appointment) ,'btn-xs' ) %>
               <%= edit_link('Edit appointment', edit_company_appointment_path(appointment.company,appointment) ,'btn-xs' )%>
