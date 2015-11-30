@@ -1,2 +1,5 @@
 class ContactInfo < ActiveRecord::Base
+  belongs_to :employee,
+  class_name: "Employee",
+  foreign_key: "Employee_id"
 end

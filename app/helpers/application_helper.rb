@@ -24,15 +24,15 @@ module ApplicationHelper
   end
 
   def trash_link(text, path, styleclass='', html_options={})
-    link_to fa_icon('trash-o', :text => text), path, :class => "btn btn-danger #{styleclass}", :data => {:confirm => "Are you sure you want to permanently remove this?" }
+    link_to fa_icon('trash-o', :text => text), path, method: :delete ,:class => "btn btn-danger #{styleclass}", :data => {:confirm => "Are you sure you want to permanently remove this?" }
   end
 
   def delete_link(text, path, styleclass='')
-    link_to fa_icon('trash-o', :text => text), path, :class => "btn btn-danger #{styleclass}"
+    link_to fa_icon('trash-o', :text => text), path, method: :delete ,:class => "btn btn-danger #{styleclass}", :data => {:confirm => "Are you sure you want to permanently remove this?" }
   end
 
   def edit_link(text, path, styleclass='')
-    link_to fa_icon('pencil', :text => text) , path, :class => "btn btn-default #{styleclass}"
+    link_to fa_icon('pencil', :text => text) , path ,:class => "btn btn-default #{styleclass}"
   end
 
 

@@ -12,7 +12,10 @@ class Employee < ActiveRecord::Base
 
   has_many :appointments,
   class_name: "Appointment",
-  # foreign_key: 'empleyee_id',
+  dependent: :destroy
+
+  has_one :contact_info,
+  class_name: "ContactInfo",
   dependent: :destroy
 
   has_and_belongs_to_many :roles
