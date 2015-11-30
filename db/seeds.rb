@@ -5,6 +5,7 @@
 Company.delete_all
 Employee.delete_all
 Role.delete_all
+Appointment.delete_all
 
 company_1 = Company.create!(company_name: "Business Modelling Company")
 company_2 = Company.create!(company_name: "Sample Company")
@@ -52,3 +53,20 @@ user2.password_confirmation = "password"
 user2.company = company_2
 user2.save!
 user2.roles << user_role
+
+#creates appointments for  Admin1
+3.times do
+  Appointment.create!(employee: admin1 ,company: admin1.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: Faker::Time.between(2.days.ago, Time.now, :morning),end_time: Faker::Time.between(2.days.ago, Time.now, :afternoon))
+end
+
+3.times do
+  Appointment.create!(employee: user1 ,company: user1.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: Faker::Time.between(2.days.ago, Time.now, :morning),end_time: Faker::Time.between(2.days.ago, Time.now, :afternoon))
+end
+
+3.times do
+  Appointment.create!(employee: admin2 ,company: admin2.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: Faker::Time.between(2.days.ago, Time.now, :morning),end_time: Faker::Time.between(2.days.ago, Time.now, :afternoon))
+end
+
+3.times do
+  Appointment.create!(employee: user2 ,company: user2.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: Faker::Time.between(2.days.ago, Time.now, :morning),end_time: Faker::Time.between(2.days.ago, Time.now, :afternoon))
+end
