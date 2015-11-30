@@ -55,18 +55,14 @@ user2.save!
 user2.roles << user_role
 
 #creates appointments for  Admin1
+counter = 0
 3.times do
-  Appointment.create!(employee: admin1 ,company: admin1.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: Faker::Time.between(2.days.ago, Time.now, :morning),end_time: Faker::Time.between(2.days.ago, Time.now, :afternoon))
-end
+  counter =+ 1
+  start_time = Faker::Time.between(counter.days.ago, Time.now, :morning)
+  end_time =  Faker::Time.between(counter.days.ago, Time.now, :afternoon)
 
-3.times do
-  Appointment.create!(employee: user1 ,company: user1.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: Faker::Time.between(2.days.ago, Time.now, :morning),end_time: Faker::Time.between(2.days.ago, Time.now, :afternoon))
-end
-
-3.times do
-  Appointment.create!(employee: admin2 ,company: admin2.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: Faker::Time.between(2.days.ago, Time.now, :morning),end_time: Faker::Time.between(2.days.ago, Time.now, :afternoon))
-end
-
-3.times do
-  Appointment.create!(employee: user2 ,company: user2.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: Faker::Time.between(2.days.ago, Time.now, :morning),end_time: Faker::Time.between(2.days.ago, Time.now, :afternoon))
+  Appointment.create!(employee: admin1 ,company: admin1.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: start_time,end_time: end_time)
+  Appointment.create!(employee: user1 ,company: user1.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: start_time,end_time: end_time)
+  Appointment.create!(employee: admin2 ,company: admin2.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: start_time,end_time: end_time)
+  Appointment.create!(employee: user2 ,company: user2.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: start_time,end_time: end_time)
 end
