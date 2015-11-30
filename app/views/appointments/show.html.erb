@@ -1,0 +1,43 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong class="panel-title">Show appointment</strong>
+    <div class="clearfix "></div>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div class='row'>
+        <div class="col-md-6"><b>Description:</b></div>
+        <div class="col-md-6"><%= @appointment.description %></div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class='row'>
+        <div class="col-md-6"><b>company:</b></div>
+        <div class="col-md-6"><%= @appointment.company %></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class='row'>
+        <div class="col-md-6"><b>Start Time:</b></div>
+        <div class="col-md-6"><%= date_format @appointment.start_time %></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class='row'>
+        <div class="col-md-6"><b>End Time:</b></div>
+        <div class="col-md-6"><%= date_format @appointment.end_time %></div>
+      </div>
+    </li>
+
+  </ul>
+  <div class="form-actions panel-footer" >
+    <span class="pull-right">
+      <%= edit_link 'Edit appointment', edit_company_appointment_path(@company,@appointment) %>
+      <%= delete_link 'Delete appointment', company_appointment_path(@company,@appointment) %>
+      <%= back_link 'Back to appointment', company_appointments_path(@company)%>
+      <%= new_link 'New appointment', new_company_appointment_path(@company) %>
+    </span>
+    <div class="clearfix"></div>
+  </div>
+</div>

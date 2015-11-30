@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong class="panel-title">Show Company</strong>
+    <div class="clearfix "></div>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div class='row'>
+        <div class="col-md-6"><b>Company name:</b></div>
+        <div class="col-md-6"><%= @company.company_name %></div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class='row'>
+        <div class="col-md-6"><b>Company employees:</b></div>
+        <div class="col-md-6"><%= @company.employees.count %></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class='row'>
+        <div class="col-md-6"><b>Company appointments:</b></div>
+        <div class="col-md-6"><%= @company.appointments.count %></div>
+      </div>
+    </li>
+
+  </ul>
+  <div class="form-actions panel-footer" >
+    <span class="pull-right">
+      <%= edit_link 'Edit company', edit_company_path(@company) %>
+      <%= delete_link 'Delete company', company_path(@company)%>
+      <%= back_link 'Back to company', companies_path() %>
+      <%= new_link 'New company', new_company_path() %>
+    </span>
+    <div class="clearfix"></div>
+  </div>
+</div>

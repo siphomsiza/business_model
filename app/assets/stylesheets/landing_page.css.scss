@@ -1,0 +1,146 @@
+body{
+	padding-top: 60px;
+	font-family: "Open Sans",helvetica,arial,sans-serif;
+	color: #676A6C;
+}
+
+.table{
+	margin-bottom: 0px;
+}
+#page-top #features .container-inner-section{
+	padding-top: 30px;
+}
+#page-top #features .section-releases{
+	border: 1px solid silver;
+	margin: 25px 5px 5px 5px;
+	border-radius: 5px;
+	width: 360px;
+}
+#page-top #features .section-new-releases{
+	border: 1px solid silver;
+	margin: 25px 5px 5px 5px;
+	border-radius: 5px;
+	width: 750px;
+}
+#page-top #features .section-new-albums{
+	border: 1px solid silver;
+	margin: 25px 5px 5px 5px;
+	border-radius: 5px;
+}
+#page-top #features .container-section{
+	padding-left: 25px;
+}
+#page-top #features .new-release{
+	border: 1px solid silver;
+	width: 238px;
+}
+#page-top #features .new-release .new-release-picture{
+	padding-left: 25px;
+  position: inherit;
+	padding-left: 18px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	height: 250px;
+}
+#page-top #features .songs-release .songs-picture{
+  position: inherit;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	height: 250px;
+}
+#page-top #features .songs-release{
+	border: 1px solid silver;
+	width: 238px;
+	margin-bottom: 20px;
+}
+#page-top #features .song-tracks{
+	height: 250px;
+	width: 850px;
+}
+#page-top #features .track{
+	width: 238px;
+	border-bottom: 1px solid #e4e4e4;
+	margin-left: 10px;
+}
+#page-top #features .new-release .artist{
+	position: inherit;
+	padding-left: 18px;
+	font-size: 14px;
+  line-height: 1.9rem;
+	font-family: PlutoSansCondLight,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #0e76bc;
+}
+#page-top #features .new-release .album_title{
+	position: inherit;
+	line-height: 1.9rem;
+	font-family: PlutoSansCondMedium-Italic,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-decoration: none;
+	color: #0e76bc;
+	border-top: 1px solid #e4e4e4;
+	width: 200px;
+	margin: auto;
+}
+#page-top #features .new-release .release-date{
+	position: inherit;
+	line-height: 1.9rem;
+	border-top: 1px solid #e4e4e4;
+	width: 200px;
+	margin: auto;
+}
+#page-top #features .paginate-new-release{
+	border-top: 1px solid #e4e4e4;
+	margin-top: 15px;
+}
+#page-top .header-back {
+  height: 470px;
+  width: 100%;
+}
+#page-top .header-back.one {
+  background: url('/images/header_one.png') 50% 0 no-repeat;
+}
+#page-top .header-back.three {
+  background: url('/images/header_three.png') 20% 0 no-repeat;
+}
+#page-top .header-back.two {
+  background: url('/images/header_two.png') 20% 0 no-repeat;
+}
+#page-top  .navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+#page-top .navbar-nav > li > a {
+  padding-top: 20px;
+  border-top: 6px solid transparent;
+}
+#page-top .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
+  background: transparent;
+  color: #fff;
+  border-top: 6px solid #1ab394;
+}
+
+#page-top .navbar-default .navbar-nav > li > a:hover {
+  color: black;
+}
+
+#page-top .navbar-default .navbar-nav > .active > a:focus {
+  background: transparent;
+  color: #fff;
+}
+
+#page-top .navbar-default.navbar-scroll .navbar-nav > .active > a:focus {
+  background: transparent;
+  color: inherit;
+}
+#page-top #features .artists-featured-picture{
+	padding-left: 0px;
+	padding-bottom: 5px;
+}
+#page-top #features .artists-featured{
+	border-top: 6px solid #1ab394;
+	padding: 5px;
+}
+
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}

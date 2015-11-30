@@ -1,0 +1,21 @@
+<script>
+function getValue()
+  {
+  var x=document.getElementById("alert_dange_message").style.display = 'none';
+  }
+</script>
+<% if f.object.errors.any? %>
+	<div class="alert alert-danger" id="alert_dange_message">
+		<%=button_to_function "x", "getValue()", :class =>"close",:style=>"width:25px;height: 25px;border:none;background:none;"%>
+		<p>
+			<h3><%= pluralize(f.object.errors.count, "error") %> prohibited this item from being saved:</h3>
+			<ul>
+				<% f.object.errors.full_messages.each do |msg| %>
+				<li>
+					<%= msg %>
+				</li>
+				<% end %>
+			</ul>
+		</p>
+	</div>
+<% end %>

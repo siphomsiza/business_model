@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Business Modelling Associates</title>
+		<%= stylesheet_link_tag "application", :media => "all" %>
+		<%= csrf_meta_tags %>
+	</head>
+	<script>
+		function getValue() {
+			var x = document.getElementById("flash-message").style.display = 'none';
+
+		}
+	</script>
+	<body>
+		<!-- Wrap all page content here -->
+		<div id="wrap">
+			<!-- Fixed navbar -->
+			<%= render 'layouts/navigation'%>
+			<!-- Begin page content -->
+			<div class="container">
+				<div class="row container-inner-section">
+					<div class="col-md-12">
+						<%= render 'shared/alert_messages' %>
+						<%= yield %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

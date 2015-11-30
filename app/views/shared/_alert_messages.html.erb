@@ -1,0 +1,10 @@
+<div class='alert-container' id="flash-message">
+	<% flash.each do |name, msg| %>
+	  <% if msg.is_a?(String) %>
+			<div class="alert alert-<%= trasform_alert_key(name) %> fade in">
+		    <%#=button_to_function "x", "getValue()", :class =>"close",:style=>"width:25px;height: 25px;border:none;background:none;"%>
+			  <p><%= content_tag :div, msg, :id => "flash_#{name}" %></p>
+			</div>
+	  <% end %>
+	<% end %>
+</div>

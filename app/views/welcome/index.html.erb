@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong class="panel-title">Appointments</strong>
+    <span class="pull-right">
+     <%= list_search(@q, authenticated_root_path, :description) %>
+    </span>
+    <div class="clearfix "></div>
+  </div>
+  <div >
+    <table class="table table-striped table-bordered  table-hover table-condensed table-responsive ">
+      <thead>
+        <tr>
+          <th><%= sort_link @q, :id, "#"%></th>
+          <th><%= sort_link @q, :description, "Description"%></th>
+          <th><%= sort_link @q, :employee, "Employee"%></th>
+          <th><%= sort_link @q, :start_time, "Start Time"%></th>
+          <th><%= sort_link @q, :end_time, "End Time"%></th>
+          <th >Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @appointments.each do |appointment| %>
+          <tr>
+            <td><%= appointment.id %></td>
+            <td width="300px;"><%= appointment.description %></td>
+            <td width="250px;"><%= appointment.employee.fullname %></td>
+            <td width="100px;"><%= date_format appointment.start_time %></td>
+            <td width="100px;"><%= date_format appointment.end_time %></td>
+            <td class='actions'>
+              <%= show_link('Show appointment', company_appointment_path(appointment.company,appointment) ,'btn-xs' ) %>
+              <%= edit_link('Edit appointment', edit_company_appointment_path(appointment.company,appointment) ,'btn-xs' )%>
+              <%= trash_link 'Delete', company_appointment_path(appointment.company,appointment),'btn-xs' %>
+            </td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel-footer">
+    <div class='row'>
+      <div class="col-md-6"><%= paginate @appointments %></div>
+      <div class="col-md-6">
+        <span class="pull-right">
+          <%= new_link 'New appointment', new_company_appointment_path(current_employee.company) %>
+          </span>
+      </div>
+    </div>
+    <div class="clearfix "></div>
+  </div>
+</div>
