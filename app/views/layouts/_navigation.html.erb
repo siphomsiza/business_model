@@ -13,18 +13,50 @@
         <ul class="nav navbar-nav pull-right" >
           <li class="dropdown user-profile">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <%if current_employee.has_role?("Admin User")%>
-                <li class="last"><%= link_to 'Manage Companies', companies_path() %></li>
-              <%end%>
+              <li class="last"><%= link_to raw('<i class="fa fa-book"></i> My Appointments'), company_my_appointments_path(current_employee.company) %></li>
 
               <%if current_employee.has_role?("Admin User")%>
-                <li class="last"><%= link_to 'Users’ Appointments', company_appointments_path(current_employee.company) %></li>
-                <li class="last"><%= link_to 'My Appointments', company_my_appointments_path(current_employee.company) %></li>
-              <%else%>
-                <li class="last"><%= link_to 'My Appointments', company_my_appointments_path(current_employee.company) %></li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle " data-toggle="dropdown" href="#">
+                      <i class="fa fa-gear"></i>  Admin <span class="fa caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="<%= companies_path()%>" >
+                          <i class="fa fa-building-o"></i> Manage Companies
+                        </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="<%= company_appointments_path(current_employee.company) %>">
+                          <i class="fa fa-book"></i> Manage Appointments
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
               <%end%>
-              <li><%= link_to raw('<i class="fa fa-sign-out"></i> Sign out'), destroy_employee_session_url, method: :delete, class: 'sign-out' %></li>
-              <li><%= link_to raw("<i class='fa fa-user'></i> #{current_employee.try(:fullname).present? ? current_employee.try(:fullname) : current_employee.try(:email)}"), edit_employee_registration_path() %></li>
+
+              <li class="dropdown">
+                <a class="dropdown-toggle " data-toggle="dropdown" href="#">
+                  <i class="fa fa-user"></i>  <%= current_employee.try(:fullname) || current_employee.try(:email)%> <span class="fa caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="<%= edit_employee_registration_path%>" >
+                      <i class="fa fa-user"></i> Profile
+                    </a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="<%= destroy_employee_session_url %>" data-method='DELETE'>
+                      <i class="fa fa-sign-out"></i> Logout
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- <li><%= link_to raw('<i class="fa fa-sign-out"></i> Sign out'), destroy_employee_session_url, method: :delete, class: 'sign-out' %></li>
+              <li><%= link_to raw("<i class='fa fa-user'></i> #{current_employee.try(:fullname).present? ? current_employee.try(:fullname) : current_employee.try(:email)}"), edit_employee_registration_path() %></li> -->
             </a>
           </li>
         </ul>
