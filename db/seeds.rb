@@ -58,10 +58,10 @@ user2.roles << user_role
 #creates appointments for  Admin1
 counter = 0
 10.times do
-  counter =+ 2
-  start_time = Faker::Time.forward(23, :morning)#Faker::Time.between(counter.days.ago, Time.now, :morning)
-  end_time =  Faker::Time.backward(14, :evening)
-
+  counter += 1
+  start_time = DateTime.now + counter.days
+  end_time =   DateTime.parse("#{start_time}") + 5.hour
+  puts "#{start_time}             #{end_time}             #{counter} \n\n"
   Appointment.create!(employee: admin1 ,company: admin1.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: start_time,end_time: end_time)
   Appointment.create!(employee: user1 ,company: user1.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: start_time,end_time: end_time)
   Appointment.create!(employee: admin2 ,company: admin2.company,description: Faker::Commerce.department ,info:  Faker::Lorem.sentence(20),start_time: start_time,end_time: end_time)

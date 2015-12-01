@@ -51,6 +51,8 @@ GEM
       railties (>= 3.0)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
+    bootstrap3-datetimepicker-rails (4.14.30)
+      momentjs-rails (>= 2.8.1)
     builder (3.2.2)
     cancan (1.6.10)
     coderay (1.1.0)
@@ -135,6 +137,8 @@ GEM
     mime-types (1.25.1)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    momentjs-rails (2.10.6)
+      railties (>= 3.1)
     multi_json (1.8.4)
     netrc (0.7.9)
     nokogiri (1.6.7)
@@ -222,6 +226,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    simple_form (3.2.0)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -268,6 +275,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-datepicker-rails
   bootstrap-sass (~> 3.1.1)
+  bootstrap3-datetimepicker-rails (~> 4.14.30)
   cancan (= 1.6.10)
   coffee-rails (~> 4.1.0)
   database_cleaner
@@ -285,6 +293,7 @@ DEPENDENCIES
   kaminari
   kaminari-bootstrap!
   mailcatcher
+  momentjs-rails (>= 2.9.0)
   pg
   pry-rails
   rails (= 4.2.5)
@@ -293,6 +302,7 @@ DEPENDENCIES
   rspec-rails (~> 3.0.0.beta1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simple_form
   sprockets (= 2.11.0)
   test-unit
   thin

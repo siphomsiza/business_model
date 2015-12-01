@@ -23,17 +23,19 @@ class Appointment < ActiveRecord::Base
     # Enumerable#any? returns true or false for the collection,
     # so you dont have to specify a return value
     # since its the last evaluation in the method
-    @appointments.any?{|apt| @start_end_time.overlaps? (apt.start_time..apt.end_time) unless self == apt } #=> takes each appointment in appointments assigns to apt and checks against the passed in appointment object
+    @appointments.any?{|apt| @start_end_time.overlaps? (apt.start_time..apt.end_time) unless self.id == apt.id } #=> takes each appointment in appointments assigns to apt and checks against the passed in appointment object
   end
 
   def overlapping_appointments
-    if conflicting?
+    if start_time.present? && start_time.present? && conflicting?
       errors[:base] << "This appointment overlaps with another one."
     end
   end
 
   def start_must_be_before_end_time
-    errors.add(:start_time, "must be before end time") unless
-        start_time < end_time
+    if start_time.present? && end_time.present?
+      errors.add(:start_time, "must be before end time") unless
+          start_time < end_time
+    end
   end
 end

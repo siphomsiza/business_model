@@ -51,9 +51,14 @@ gem 'jquery-ui-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'font-awesome-rails'
 gem 'bootstrap-datepicker-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+
 gem 'sprockets', '2.11.0'
 
 gem 'faker'
+
+gem 'simple_form'
 
 group :development, :test do
   gem 'mailcatcher'
