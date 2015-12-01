@@ -27,7 +27,7 @@ class Appointment < ActiveRecord::Base
   end
 
   def overlapping_appointments
-    if start_time.present? && start_time.present? && conflicting?
+    if start_time.present? && end_time.present? && conflicting?
       errors[:base] << "This appointment overlaps with another one."
     end
   end
