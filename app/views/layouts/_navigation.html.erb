@@ -13,7 +13,7 @@
         <ul class="nav navbar-nav pull-right" >
           <li class="dropdown user-profile">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <li class="last"><%= link_to raw('<i class="fa fa-book"></i> My Appointments'), company_my_appointments_path(current_employee.company) %></li>
+              <li class="last"><%= link_to raw("<i class='fa fa-book'></i> My Appointments <span class='label label-primary'>#{current_employee.appointments.count}</span>"), company_my_appointments_path(current_employee.company) %></li>
 
               <%if current_employee.has_role?("Admin User")%>
                   <li class="dropdown">
