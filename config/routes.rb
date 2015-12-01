@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   resources :companies do
     resources :appointments
+    get :my_appointments, to: 'appointments#my_appointments'
   end
 end

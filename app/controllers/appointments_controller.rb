@@ -11,7 +11,15 @@ class AppointmentsController < ApplicationController
       @appointments = current_employee.company.appointments
     else
       @appointments = current_employee.appointments
+      redirect_to company_my_appointments_path(current_employee.company)
     end
+    @q =  @appointments.search(params[:q])
+    @appointments = @q.result.page(params[:page]).limit(params[:per_page]||10)
+  end
+
+  def my_appointments
+    params[:q]||={:s => "firstname asc"}
+    @appointments = current_employee.appointments
     @q =  @appointments.search(params[:q])
     @appointments = @q.result.page(params[:page]).limit(params[:per_page]||10)
   end
