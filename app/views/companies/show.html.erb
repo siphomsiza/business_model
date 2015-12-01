@@ -28,7 +28,7 @@
   <div class="form-actions panel-footer" >
     <span class="pull-right">
       <%= edit_link 'Edit company', edit_company_path(@company) %>
-      <%= delete_link 'Delete company', company_path(@company)%>
+      <%= delete_link 'Delete company', company_path(@company) ,"#{@company == current_employee.company ? 'disabled' : ''}"%>
       <%= back_link 'Back to company', companies_path() %>
       <%= new_link 'New company', new_company_path() %>
     </span>

@@ -13,7 +13,7 @@
     <span class="pull-right"> <%= html_submit %>
       <% unless f.object.new_record? %>
         <%= show_link 'Show company', company_path(@company) %>
-        <%= delete_link 'Delete company', company_path(@company) %>
+        <%= delete_link 'Delete company', company_path(@company) ,"#{@company == current_employee.company ? 'disabled' : ''}"%>
         <%= new_link 'New company', new_company_path(@company) %>
       <% end %>
       <%= back_link('Back to companies', companies_path(@company)) %> </span>
