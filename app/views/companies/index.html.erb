@@ -23,8 +23,8 @@
           <tr>
             <td><%= company.id %></td>
             <td width="250px;"><%= company.company_name %></td>
-            <td width="130px;"><%= company.employees.count %></td>
-            <td width="150px;"><%= company.appointments.count %></td>
+            <td width="130px;"><center><span class='label label-info'><%= company.employees.count %></span></center></td>
+            <td width="150px;"><center><span class='label label-primary'><%= company.appointments.count %></span></center></td>
             <td width="100px;"><%= date_format company.created_at %></td>
             <td class='actions'>
               <%= show_link('Show company', company_path(company) ,'btn-xs' ) %>
