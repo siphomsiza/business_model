@@ -8,7 +8,7 @@ class AppointmentsController < ApplicationController
   def index
     params[:q]||={:s => "firstname asc"}
     if current_employee.has_role?("Admin User")
-      @appointments = current_employee.company.appointments
+      @appointments = @company.appointments
     else
       @appointments = current_employee.appointments
       redirect_to company_my_appointments_path(current_employee.company)
