@@ -29,7 +29,7 @@
             <td class='actions'>
               <%= show_link('Show company', company_path(company) ,'btn-xs' ) %>
               <%= edit_link('Edit company', edit_company_path(company) ,'btn-xs' )%>
-              <%= list_link('Manage appointments', company_appointments_path(current_employee.company) ,'btn-xs' )%>
+              <%= list_link('Manage appointments', company_appointments_path(company) ,'btn-xs' )%>
               <%= trash_link 'Delete', company_path(company),"btn-xs #{company == current_employee.company ? 'disabled' : ''}" %>
             </td>
           </tr>
